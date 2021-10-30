@@ -1,0 +1,26 @@
+div.gallery {
+  padding-top: 2em;
+}
+
+a.gallery-link {
+  height: 30vh; 
+  width: 20%; 
+  flex-grow: 1;
+}
+
+img.gallery-image {
+  max-height: 100%;
+  min-height: 100%; 
+  min-width: 100%; 
+  object-fit: cover; 
+  vertical-align: bottom;
+}
+
+video.gallery-video {
+  margin-top: 0; 
+  max-height: 100%; 
+  min-height: 100%; 
+  min-width: 100%; 
+  object-fit: cover; 
+  vertical-align: bottom;
+}
