@@ -1,27 +1,28 @@
-{{- define "main" -}}
+{{ define "main" }}
 <section id="wrapper">
 
-{{- with .Content -}}
-<div id="gallery-content">{{ .Content }}</div>
-{{- end -}}
+{{ with .Content }}<div id="gallery-content">{{ .Content }}</div>{{ end }}
 
-{{- with site.Params.gallery_data_json -}}
-  {{- with transform.Unmarshall . -}}
+{{ with site.Params.gallery_data_json }}
+
+{{ with transform.Unmarshal . }}
   
-    {{- with index . "description" -}}
+    {{ with index . "description" }}
 <div id="gallery-description">{{ . | markdownify }}</div>
-    {{- end -}}
+    {{ end }}
   
-    {{- with index . "slides" -}}
+    {{ with index . "slides" }}
     
-      {{- $gallery := site.Params.gallery_name | default "photos" -}}
-      {{- $photo_width := site.Params.gallery_photo_width | default "500" -}}
-      {{- partial "gallery.html" (dict "gallery" $gallery "photo_width" $photo_width "slide_data" $slide_data) -}}
+      {{ $gallery := site.Params.gallery_name | default "photos" }}
+      {{ $photo_width := site.Params.gallery_photo_width | default "500" }}
+      {{ partial "gallery.html" (dict "gallery" $gallery "photo_width" $photo_width "slide_data" .) }}
   
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
+    {{ end }}
+    
+  {{ end }}
+  
+{{ end }}
 
 </section>
 
-{{- end -}}
+{{ end }}
