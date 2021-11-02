@@ -14,7 +14,7 @@
         {
             "field": "params.gallery_name",
             "label": "Gallery Name (glightbox-data-gallery)",
-            "placeholder": "photo"
+            "placeholder": ""
         },
         {
           "field": "params.gallery_photo_width",

@@ -4,14 +4,12 @@
 {{ with .Content }}<div id="gallery-content">{{ .Content }}</div>{{ end }}
 
 {{ $gallery_data := false }}
-{{ with site.data.gallery_data_json }}
+{{ with site.Data.plugin_gallery.gallery_data }}
 {{ $gallery_data = . }}
-{{ else with site.data.gallery_data_toml }}
+{{ else }}
+  {{ with site.Params.gallery_data }}
 {{ $gallery_data = . }}
-{{ else with site.data.gallery_data_yaml }}
-{{ $gallery_data = . }}
-{{ else with site.Params.gallery_data }}
-{{ $gallery_data = . }}
+  {{ end }}
 {{ end }}
 
 {{ if $gallery_data }}
