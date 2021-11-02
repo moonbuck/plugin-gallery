@@ -1,5 +1,5 @@
 {
-    "version": "1.0.0",
+    "version": "2.0.0",
     "title": "Moondeer's Gallery",
     "description": "Leverages plugin-lightbox to create a a gallery page.",
     "includes": [
@@ -7,9 +7,9 @@
     ],
     "fields": [
         {
-            "field": "params.gallery_data_json",
-            "label": "Gallery Data (JSON)",
-            "placeholder": "[{\"title\": \"Slide Title\", \"src\": \"https://path/to/slide/content.ext\"}]."
+            "field": "params.gallery_data",
+            "label": "Gallery Data",
+            "placeholder": ""
         },
         {
             "field": "params.gallery_name",

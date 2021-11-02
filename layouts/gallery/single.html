@@ -3,18 +3,32 @@
 
 {{ with .Content }}<div id="gallery-content">{{ .Content }}</div>{{ end }}
 
-{{ with site.Params.gallery_data_json }}
+{{ $gallery_data := false }}
+{{ with site.data.gallery_data_json }}
+{{ $gallery_data = . }}
+{{ else with site.data.gallery_data_toml }}
+{{ $gallery_data = . }}
+{{ else with site.data.gallery_data_yaml }}
+{{ $gallery_data = . }}
+{{ else with site.Params.gallery_data }}
+{{ $gallery_data = . }}
+{{ end }}
 
-{{ with transform.Unmarshal . }}
-  
-    {{ with index . "description" }}
+{{ if $gallery_data }}
+
+{{ if (not ($gallery_data | reflect.IsMap)) }}
+{{ with transform.Unmarshal $gallery_data }}{{ $gallery_data = . }}{{ end }}
+{{ end }}
+
+{{ if ($gallery_data | reflect.IsMap) }}
+    {{ with index $gallery_data "description" }}
 <div id="gallery-description">{{ . | markdownify }}</div>
     {{ end }}
   
-    {{ with index . "slides" }}
+    {{ with index $gallery_data "slides" }}
     
       {{ $gallery := site.Params.gallery_name | default "photos" }}
-      {{ $photo_width := site.Params.gallery_photo_width | default "500" }}
+      {{ $photo_width := site.Params.gallery_photo_width | default 500 }}
       {{ partial "gallery.html" (dict "gallery" $gallery "photo_width" $photo_width "slide_data" .) }}
   
     {{ end }}
