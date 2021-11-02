@@ -153,17 +153,17 @@ Let’s look at the file and then I’ll explain how the keys are used.
 <dt>photo_width</dt>
 <dd>Establishes a pixel width for requests running through the <code>https://micro.blog/photos/</code> API. The fetched image is intended to serve as a thumbnail.</dd>
 <dt>link_class</dt>
-<dd> Custom class name to add to <code><a></code> tags. This value will be anchorized (dash-cased). </dd>
+<dd> Custom class name to add to <code>&lt;a></code> tags. This value will be anchorized (dash-cased). </dd>
 <dt>img_class</dt>
-<dd> Custom class name to add to <code><img></code> tags. This value will be anchorized (dash-cased). </dd>
+<dd> Custom class name to add to <code>&lt;img></code> tags. This value will be anchorized (dash-cased). </dd>
 <dt>video_class</dt>
-<dd>Custom class name to add to <code><video></code> tags. This value will be anchorized (dash-cased).</dd>
+<dd>Custom class name to add to <code>&lt;video></code> tags. This value will be anchorized (dash-cased).</dd>
 <dt>link_style</dt>
-<dd> Custom CSS style to be applied to <code><a></code> tags. </dd>
+<dd> Custom CSS style to be applied to <code>&lt;a></code> tags. </dd>
 <dt>img_style</dt>
-<dd> Custom CSS style to be applied to <code><img></code> tags. </dd>
+<dd> Custom CSS style to be applied to <code>&lt;img></code> tags. </dd>
 <dt>video_style</dt>
-<dd>Custom CSS style to be applied to <code><video></code> tags.</dd>
+<dd>Custom CSS style to be applied to <code>&lt;video></code> tags.</dd>
 <dt>title_key</dt>
 <dd>The lookup key for slide title data to use in place of <code>title</code>.</dd>
 <dt>desc_key</dt>
