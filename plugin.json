@@ -10,16 +10,6 @@
             "field": "params.gallery_data",
             "label": "Gallery Data",
             "placeholder": ""
-        },
-        {
-            "field": "params.gallery_name",
-            "label": "Gallery Name (glightbox-data-gallery)",
-            "placeholder": ""
-        },
-        {
-          "field": "params.gallery_photo_width",
-          "label": "Photo Width (https://micro.blog/photos/[PHOTO_WIDTH]x)",
-          "placeholder": 500
         }
     ]
   }

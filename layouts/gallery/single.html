@@ -1,37 +1,33 @@
 {{ define "main" }}
 <section id="wrapper">
 
-{{ with .Content }}<div id="gallery-content">{{ .Content }}</div>{{ end }}
-
 {{ $gallery_data := false }}
 {{ with site.Data.plugin_gallery.gallery_data }}
 {{ $gallery_data = . }}
 {{ else }}
-  {{ with site.Params.gallery_data }}
+{{ with site.Params.gallery_data }}{{ $gallery_data = . }}{{ end }}
+{{ end }}
+
+{{ if (and $gallery_data (not ($gallery_data | reflect.IsMap))) }}
+{{ with transform.Unmarshal $gallery_data }}
 {{ $gallery_data = . }}
-  {{ end }}
+{{ end }}
 {{ end }}
 
-{{ if $gallery_data }}
+{{ if (and ($gallery_data | reflect.IsMap) (isset $gallery_data "slides")) }}
 
-{{ if (not ($gallery_data | reflect.IsMap)) }}
-{{ with transform.Unmarshal $gallery_data }}{{ $gallery_data = . }}{{ end }}
-{{ end }}
 
-{{ if ($gallery_data | reflect.IsMap) }}
-    {{ with index $gallery_data "description" }}
+{{ with $gallery_data }}
+
+{{ with .description }}
 <div id="gallery-description">{{ . | markdownify }}</div>
-    {{ end }}
+{{ end }}
+
+{{ $name := .name | default $.LinkTitle | anchorize }}
+
+{{ partial "gallery.html" (dict "gallery" $name "photo_width" .photo_width "link_class" .link_class "img_class" .img_class "video_class" .video_class "link_style" .link_style "img_style" .img_style "video_style" .video_style "title_key" .title_key "desc_key" .desc_key "src_key" .src_key "width_key" .width_key "height_key" .height_key "thumb_src_key" .thumb_src_key "desc_position_key" .desc_position_key "slide_data" .slides) }}
   
-    {{ with index $gallery_data "slides" }}
-    
-      {{ $gallery := site.Params.gallery_name | default "photos" }}
-      {{ $photo_width := site.Params.gallery_photo_width | default 500 }}
-      {{ partial "gallery.html" (dict "gallery" $gallery "photo_width" $photo_width "slide_data" .) }}
-  
-    {{ end }}
-    
-  {{ end }}
+{{ end }}
   
 {{ end }}
 
