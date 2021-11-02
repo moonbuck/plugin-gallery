@@ -149,37 +149,37 @@ Let’s look at the file and then I’ll explain how the keys are used.
 
 <dl>
 <dt>name</dt>
-<dd>This value will be used to set the `data-gallery` attributes within the glightbox API. The `.LinkTitle` of the page will be used when this value is absent.</dd>
-<dt>photo\_width</dt>
-<dd>Establishes a pixel width for requests running through the `https://micro.blog/photos/` API. The fetched image is intended to serve as a thumbnail.</dd>
-<dt>link\_class</dt>
-<dd> Custom class name to add to `<a>` tags. This value will be anchorized (dash-cased). </dd>
-<dt>img\_class</dt>
-<dd> Custom class name to add to `<img>` tags. This value will be anchorized (dash-cased). </dd>
-<dt>video\_class</dt>
-<dd>Custom class name to add to `<video>` tags. This value will be anchorized (dash-cased).</dd>
-<dt>link\_style</dt>
-<dd> Custom CSS style to be applied to `<a>` tags. </dd>
-<dt>img\_style</dt>
-<dd> Custom CSS style to be applied to `<img>` tags. </dd>
-<dt>video\_style</dt>
-<dd>Custom CSS style to be applied to `<video>` tags.</dd>
-<dt>title\_key</dt>
-<dd>The lookup key for slide title data to use in place of `title`.</dd>
-<dt>desc\_key</dt>
-<dd> The lookup key for slide description data to use in place of `description`.</dd>
-<dt>src\_key</dt>
-<dd> The lookup key for slide src data to use in place of `src`. </dd>
-<dt>width\_key</dt>
-<dd> The lookup key for slide width data to use in place of `width`. </dd>
-<dt>height\_key</dt>
-<dd> The lookup key for slide height data to use in place of `height`. </dd>
-<dt>thumb\_src\_key</dt>
-<dd> The lookup key for slide thumb source data to use in place of `thumb`. </dd>
-<dt>desc\_position\_key</dt>
-<dd> The lookup key for slide description position source data to use in place of `desc-position`. </dd>
+<dd>This value will be used to set the <code>data-gallery</code> attributes within the glightbox API. The <code>.LinkTitle</code> of the page will be used when this value is absent.</dd>
+<dt>photo_width</dt>
+<dd>Establishes a pixel width for requests running through the <code>https://micro.blog/photos/</code> API. The fetched image is intended to serve as a thumbnail.</dd>
+<dt>link_class</dt>
+<dd> Custom class name to add to <code><a></code> tags. This value will be anchorized (dash-cased). </dd>
+<dt>img_class</dt>
+<dd> Custom class name to add to <code><img></code> tags. This value will be anchorized (dash-cased). </dd>
+<dt>video_class</dt>
+<dd>Custom class name to add to <code><video></code> tags. This value will be anchorized (dash-cased).</dd>
+<dt>link_style</dt>
+<dd> Custom CSS style to be applied to <code><a></code> tags. </dd>
+<dt>img_style</dt>
+<dd> Custom CSS style to be applied to <code><img></code> tags. </dd>
+<dt>video_style</dt>
+<dd>Custom CSS style to be applied to <code><video></code> tags.</dd>
+<dt>title_key</dt>
+<dd>The lookup key for slide title data to use in place of <code>title</code>.</dd>
+<dt>desc_key</dt>
+<dd> The lookup key for slide description data to use in place of <code>description</code>.</dd>
+<dt>src_key</dt>
+<dd> The lookup key for slide src data to use in place of <code>src</code>. </dd>
+<dt>width_key</dt>
+<dd> The lookup key for slide width data to use in place of <code>width</code>. </dd>
+<dt>height_key</dt>
+<dd> The lookup key for slide height data to use in place of <code>height</code>. </dd>
+<dt>thumb_src_key</dt>
+<dd> The lookup key for slide thumb source data to use in place of <code>thumb</code>. </dd>
+<dt>desc_position_key</dt>
+<dd> The lookup key for slide description position source data to use in place of <code>desc-position</code>. </dd>
 <dt>description</dt>
 <dd>This value holds the introductory for your gallery. Any markdown will be parsed before it hits the page.</dd>
 <dt>slides</dt>
-<dd>The array of all your slide JSON objects. The only entry required to create a slide is  `src`, which should point to your slide’s content.</dd>
+<dd>The array of all your slide JSON objects. The only entry required to create a slide is <code>src</code>, which should point to your slide’s content.</dd>
 </dl>
