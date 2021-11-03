@@ -25,7 +25,7 @@
 
 {{ $name := .name | default $.LinkTitle | anchorize }}
 
-{{ partial "gallery.html" (dict "gallery" $name "photo_width" .photo_width "link_class" .link_class "img_class" .img_class "video_class" .video_class "link_style" .link_style "img_style" .img_style "video_style" .video_style "title_key" .title_key "desc_key" .desc_key "src_key" .src_key "width_key" .width_key "height_key" .height_key "thumb_src_key" .thumb_src_key "desc_position_key" .desc_position_key "slide_data" .slides) }}
+{{ partial "gallery.html" (dict "gallery" $name "slide_data" .slides "wrap" .wrap "div_style" .div_style "div_class" .div_class "link_class" .link_class "link_style" .link_style "img_class" .img_class "img_style" .img_style "video_class" .video_class "video_style" .video_style "photo_width" .photo_width "desc_position" .desc_position "effect" .effect "zoomable" .zoomable "draggable" .draggable "loop" .loop "autoplay" .autoplay "preload" .preload "width" .width "height" .height) }}
   
 {{ end }}
   
