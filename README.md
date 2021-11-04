@@ -80,25 +80,15 @@ You will want to make sure you are pasting in a JSON object.
 
 If, however, you choose to create a new file located at `data/plugin_gallery/gallery_data.ext` (where `ext` is replaced by the appropriate extension), the data file may be JSON, TOML, or YAML. This example will use JSON. So, to deploy it, I would want to create a new template at `data/plugin_gallery/gallery_data.json`.
 
-Let’s look at the file and then I’ll explain how the keys are used.
+Let’s look at an example file and then I’ll explain what all we can throw into it.
 
 ```json
 {
   "name": "Signed Art",
   "photo_width": 400,
-  "link_class": "Custom Link Class",
-  "img_class": "Custom Image Class",
-  "video_class": "Custom Video Class",
   "link_style": "height:200px;flex-grow:1",
   "img_style": "max-height:100%;min-height:100%;object-fit:cover;vertical-align:bottom",
   "video_style": "max-height:100%;min-height:100%;object-fit:cover;vertical-align:bottom",
-  "title_key": "title",
-  "desc_key": "description",
-  "src_key": "src",
-  "width_key": "width",
-  "height_key": "height",
-  "thumb_src_key": "thumb",
-  "desc_position_key": "desc-position",
   "description": "*An interactive grid of my signed digital art in the order I created them.*",
   "slides": [
     {"title": "American Fabric", 
@@ -148,38 +138,133 @@ Let’s look at the file and then I’ll explain how the keys are used.
 ## Valid Keys
 
 <dl>
-<dt>name</dt>
-<dd>This value will be used to set the <code>data-gallery</code> attributes within the glightbox API. The <code>.LinkTitle</code> of the page will be used when this value is absent.</dd>
-<dt>photo_width</dt>
-<dd>Establishes a pixel width for requests running through the <code>https://micro.blog/photos/</code> API. The fetched image is intended to serve as a thumbnail.</dd>
+<dt>wrap</dt>
+<dd>Whether the gallery links should wrap or be constrained to a single row. Default is<code>true</code>.</dd>
+
+<dt>div_class</dt>
+<dd>Custom class to apply to the <code>div</code>. Default is<code>undefined</code>. 'gallery' is always applied.</dd>
+
+<dt>div_style</dt>
+<dd>Custom style to apply to the <code>div </code>in additon to the flex declaration and wrap specification. Default is<code>undefined</code>.</dd>
+
 <dt>link_class</dt>
-<dd> Custom class name to add to <code>&lt;a></code> tags. This value will be anchorized (dash-cased). </dd>
-<dt>img_class</dt>
-<dd> Custom class name to add to <code>&lt;img></code> tags. This value will be anchorized (dash-cased). </dd>
-<dt>video_class</dt>
-<dd>Custom class name to add to <code>&lt;video></code> tags. This value will be anchorized (dash-cased).</dd>
+<dd>Custom class to apply to all anchor tags. Default is<code>undefined</code>. gallery-link and glightbox are always applied.</dd>
+
 <dt>link_style</dt>
-<dd> Custom CSS style to be applied to <code>&lt;a></code> tags. </dd>
-<dt>img_style</dt>
-<dd> Custom CSS style to be applied to <code>&lt;img></code> tags. </dd>
+<dd>Custom style to apply to all anchor tags. Default is<code>undefined</code>.</dd>
+
+<dt>gallery</dt>
+<dd>The name of the gallery. This is required.</dd>
+
+<dt>desc_position</dt>
+<dd>(<code>bottom</code>, <code>top</code>, <code>left</code>, <code>right</code>) Where all slides descriptions should be positioned. Default is <code>bottom</code>.</dd>
+
+<dt>effect</dt>
+<dd>(<code>zoom</code>, <code>fade</code>, <code>none</code>) The animation effect all slide should use. Default is <code>zoom</code>.</dd>
+
+<dt>width</dt>
+<dd>The custom width for all slides. Default is <code>900px</code>.</dd>
+
+<dt>height</dt>
+<dd>The custom height for all slides. Default is <code>506px</code>.</dd>
+
+<dt>zoomable</dt>
+<dd>Whether slides should be zoomable. Default is<code>true</code>.</dd>
+
+<dt>draggable</dt>
+<dd>Whether slides should be draggable. Default is<code>true</code>.</dd>
+
+<dt>video_class</dt>
+<dd>Custom class to apply to all <code>video</code> tags. Default is<code>undefined</code>. gallery-video is always applied.</dd>
+
 <dt>video_style</dt>
-<dd>Custom CSS style to be applied to <code>&lt;video></code> tags.</dd>
-<dt>title_key</dt>
-<dd>The lookup key for slide title data to use in place of <code>title</code>.</dd>
-<dt>desc_key</dt>
-<dd> The lookup key for slide description data to use in place of <code>description</code>.</dd>
-<dt>src_key</dt>
-<dd> The lookup key for slide src data to use in place of <code>src</code>. </dd>
-<dt>width_key</dt>
-<dd> The lookup key for slide width data to use in place of <code>width</code>. </dd>
-<dt>height_key</dt>
-<dd> The lookup key for slide height data to use in place of <code>height</code>. </dd>
-<dt>thumb_src_key</dt>
-<dd> The lookup key for slide thumb source data to use in place of <code>thumb</code>. </dd>
-<dt>desc_position_key</dt>
-<dd> The lookup key for slide description position source data to use in place of <code>desc-position</code>. </dd>
-<dt>description</dt>
-<dd>This value holds the introductory for your gallery. Any markdown will be parsed before it hits the page.</dd>
+<dd>Custom style to apply to all <code>video</code> tags. Default is<code>undefined</code>.</dd>
+
+<dt>loop</dt>
+<dd>Whether link videos should loop. Default is<code>true</code>.</dd>
+
+<dt>autoplay</dt>
+<dd>Whether link videos should be set to autoplay. Default is<code>true</code>.</dd>
+
+<dt>preload</dt>
+<dd>Value for link video <code>preload</code> attributes. This ignored when set to autoplay. Default is<code>undefined</code>.</dd>
+
+<dt>img_class</dt>
+<dd>Custom class to apply to all <code>img</code> tags. Default is<code>undefined</code>. gallery-image is always applied.</dd>
+
+<dt>img_style</dt>
+<dd>Custom style to apply to all <code>img</code> tags. Default is<code>undefined</code>.</dd>
+
+<dt>photo_width</dt>
+<dd>Specifies a pixel width for a thumbnail image to be fetched using the <code>https://micro.blog/photos/</code> API. Default is<code>undefined</code>.</dd>
+
 <dt>slides</dt>
-<dd>The array of all your slide JSON objects. The only entry required to create a slide is <code>src</code>, which should point to your slide’s content.</dd>
+<dd>The array of slide data objects. The only requirement is to have an entry for at least one of <code>href</code> or <code>src</code>.
+<dl>
+<dt>href</dt>
+<dd>The URL for the slide content. This is required unless a <code>src</code> parameter value has been provided.</dd>
+
+<dt>src</dt>
+<dd>The URL for the link content. This is required unless an <code>href</code> parameter value has been provided.</dd>
+
+<dt>link_style</dt>
+<dd>Custom style to apply to the anchor tag. Default is <code>undefined</code>.</dd>
+
+<dt>gallery</dt>
+<dd>The name of the slide's gallery. Default is <code>undefined</code>.</dd>
+
+<dt>title</dt>
+<dd>The slide's title. Default is <code>undefined</code>.</dd>
+
+<dt>description</dt>
+<dd>The slide's description. Default is <code>undefined</code>.</dd>
+
+<dt>desc_position</dt>
+<dd>(<code>bottom</code>, <code>top</code>, <code>left</code>, <code>right</code>) Where the slide's description should be positioned. Default is <code>bottom</code>.</dd>
+
+<dt>type</dt>
+<dd>(<code>image</code>, <code>video</code>, <code>inline</code>?, <code>iframe</code>?) The slide type. Default infers from source … and the last two options I'm not sure about.</dd>
+
+<dt>effect</dt>
+<dd>(<code>zoom</code>, <code>fade</code>, <code>none</code>) The animation effect the slide should use. Default is <code>zoom</code>.</dd>
+
+<dt>width</dt>
+<dd>The custom width for this slide. Default is <code>900px</code>.</dd>
+
+<dt>height</dt>
+<dd>The custom height for this slide. Default is <code>506px</code>.</dd>
+
+<dt>zoomable</dt>
+<dd>Whether this slide should be zoomable. Default is <code>true</code>.</dd>
+
+<dt>draggable</dt>
+<dd>Whether this slide should be draggable. Default is <code>true</code>.</dd>
+
+<dt>sizes</dt>
+<dd>Specifies image sizes for different page layouts. Default is<code>undefined</code>.</dd>
+
+<dt>srcset</dt>
+<dd>Specifies a list of image files to use in different situations. Default is<code>undefined</code>.</dd>
+
+<dt>video_style</dt>
+<dd>Custom style to apply to the <code>video tag</code>. Default is<code>undefined</code>.</dd>
+
+<dt>loop</dt>
+<dd>Whether the link video should loop. Default is<code>true</code>.</dd>
+
+<dt>autoplay</dt>
+<dd>Whether the link video should be set to autoplay. Default is<code>true</code>.</dd>
+
+<dt>preload</dt>
+<dd>Value for the link video's <code>preload</code> attribute. This ignored when set to <code>autoplay</code>. Default is<code>undefined</code>.</dd>
+
+<dt>alt</dt>
+<dd>Specifies an alternate text for an image. Default is<code>undefined</code>.</dd>
+
+<dt>img_style</dt>
+<dd>Custom style to apply to the <code>img</code> tag. Default is<code>undefined</code>.</dd>
+
+<dt>photo_width</dt>
+<dd>Specifies a pixel width for a thumbnail image to be fetched using the <code>https://micro.blog/photos/</code> API. Default is<code>undefined</code>.</dd>
+</</dd>
 </dl>
