@@ -138,6 +138,9 @@ Let’s look at an example file and then I’ll explain what all we can throw in
 ## Valid Keys
 
 <dl>
+<dt>name</dt>
+<dd>The name of the gallery. This is required.</dd>
+
 <dt>wrap</dt>
 <dd>Whether the gallery links should wrap or be constrained to a single row. Default is<code>true</code>.</dd>
 
@@ -152,9 +155,6 @@ Let’s look at an example file and then I’ll explain what all we can throw in
 
 <dt>link_style</dt>
 <dd>Custom style to apply to all anchor tags. Default is<code>undefined</code>.</dd>
-
-<dt>gallery</dt>
-<dd>The name of the gallery. This is required.</dd>
 
 <dt>desc_position</dt>
 <dd>(<code>bottom</code>, <code>top</code>, <code>left</code>, <code>right</code>) Where all slides descriptions should be positioned. Default is <code>bottom</code>.</dd>
