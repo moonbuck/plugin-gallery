@@ -199,7 +199,7 @@ Let’s look at an example file and then I’ll explain what all we can throw in
 <dd>Specifies a pixel width for a thumbnail image to be fetched using the <code>https://micro.blog/photos/</code> API. Default is<code>undefined</code>.</dd>
 
 <dt>slides</dt>
-<dd>The array of slide data objects. The only requirement is to have an entry for at least one of <code>href</code> or <code>src</code>.
+<dd>The array of slide data objects. The only requirement is to have an entry for at least one of <code>href</code> or <code>src</code>. The full list of supported parameters is as follows:
 <dl>
 <dt>href</dt>
 <dd>The URL for the slide content. This is required unless a <code>src</code> parameter value has been provided.</dd>
@@ -209,9 +209,6 @@ Let’s look at an example file and then I’ll explain what all we can throw in
 
 <dt>link_style</dt>
 <dd>Custom style to apply to the anchor tag. Default is <code>undefined</code>.</dd>
-
-<dt>gallery</dt>
-<dd>The name of the slide's gallery. Default is <code>undefined</code>.</dd>
 
 <dt>title</dt>
 <dd>The slide's title. Default is <code>undefined</code>.</dd>
