@@ -262,9 +262,9 @@ Let’s look at an example file and then I’ll explain what all we can throw in
 <dd>Specifies an alternate text for an image. Default is<code>undefined</code>.</dd>
 
 <dt>img_style</dt>
-<dd>Custom style to apply to the <code>img</code> tag. Default is<code>undefined</code>.</dd>
+<dd>Custom style to apply to the <code>img</code> tag. Default is <code>undefined</code>.</dd>
 
 <dt>photo_width</dt>
 <dd>Specifies a pixel width for a thumbnail image to be fetched using the <code>https://micro.blog/photos/</code> API. Default is<code>undefined</code>.</dd>
-</</dd>
+</dl></dd>
 </dl>
