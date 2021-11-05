@@ -1,36 +1,36 @@
-{{ define "main" }}
+{{- define "main" }}
 <section id="wrapper">
 
-{{ $gallery_data := false }}
-{{ with site.Data.plugin_gallery.gallery_data }}
-{{ $gallery_data = . }}
-{{ else }}
-{{ with site.Params.gallery_data }}{{ $gallery_data = . }}{{ end }}
-{{ end }}
+{{- $gallery_data := false }}
+{{- with site.Data.plugin_gallery.gallery_data }}
+{{- $gallery_data = . }}
+{{- else }}
+{{- with site.Params.gallery_data }}{{ $gallery_data = . }}{{ end }}
+{{- end }}
 
-{{ if (and $gallery_data (not ($gallery_data | reflect.IsMap))) }}
-{{ with transform.Unmarshal $gallery_data }}
-{{ $gallery_data = . }}
-{{ end }}
-{{ end }}
+{{- if (and $gallery_data (not ($gallery_data | reflect.IsMap))) }}
+{{- with transform.Unmarshal $gallery_data }}
+{{- $gallery_data = . }}
+{{- end }}
+{{- end }}
 
-{{ if (and ($gallery_data | reflect.IsMap) (isset $gallery_data "slides")) }}
+{{- if (and ($gallery_data | reflect.IsMap) (isset $gallery_data "slides")) }}
 
 
-{{ with $gallery_data }}
+{{- with $gallery_data }}
 
-{{ with .description }}
+{{- with .description }}
 <div id="gallery-description">{{ . | markdownify }}</div>
-{{ end }}
+{{- end }}
 
-{{ $name := .name | default $.LinkTitle | anchorize }}
+{{- $name := .name | default $.LinkTitle | anchorize }}
 
-{{ partial "gallery.html" (dict "gallery" $name "slide_data" .slides "wrap" .wrap "div_style" .div_style "div_class" .div_class "link_class" .link_class "link_style" .link_style "img_class" .img_class "img_style" .img_style "video_class" .video_class "video_style" .video_style "photo_width" .photo_width "desc_position" .desc_position "effect" .effect "zoomable" .zoomable "draggable" .draggable "loop" .loop "autoplay" .autoplay "preload" .preload "width" .width "height" .height) }}
+{{- partial "gallery.html" (dict "gallery" $name "slide_data" .slides "wrap" .wrap "div_style" .div_style "div_class" .div_class "link_class" .link_class "link_style" .link_style "img_class" .img_class "img_style" .img_style "video_class" .video_class "video_style" .video_style "photo_width" .photo_width "desc_position" .desc_position "effect" .effect "zoomable" .zoomable "draggable" .draggable "loop" .loop "autoplay" .autoplay "preload" .preload "width" .width "height" .height) }}
   
-{{ end }}
+{{- end }}
   
-{{ end }}
+{{- end }}
 
 </section>
 
-{{ end }}
+{{- end }}
