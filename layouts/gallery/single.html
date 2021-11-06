@@ -2,7 +2,7 @@
 <section id="wrapper">
 
 {{- $gallery_data := false }}
-{{- with site.Data.plugin_gallery.gallery_data }}
+{{- with (site.Data.plugin_gallery_data | default site.Data.plugin_gallery.gallery_data) }}
 {{- $gallery_data = . }}
 {{- else }}
 {{- with site.Params.gallery_data }}{{ $gallery_data = . }}{{ end }}
