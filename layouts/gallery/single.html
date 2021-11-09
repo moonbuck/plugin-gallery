@@ -1,13 +1,7 @@
 {{- define "main" }}
 <section id="wrapper">
 
-{{- $gallery_data := false }}
-{{- with (site.Data.plugin_gallery_data | default site.Data.plugin_gallery.gallery_data) }}
-{{- $gallery_data = . }}
-{{- else }}
-{{- with site.Params.gallery_data }}{{ $gallery_data = . }}{{ end }}
-{{- end }}
-
+{{- $gallery_data := (site.Data.plugin_gallery_data | default site.Data.plugin_gallery.gallery_data) | default site.Params.gallery_data }}
 {{- if (and $gallery_data (not ($gallery_data | reflect.IsMap))) }}
 {{- with transform.Unmarshal $gallery_data }}
 {{- $gallery_data = . }}
