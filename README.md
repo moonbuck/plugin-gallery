@@ -9,29 +9,15 @@ Once installed, the generated page may be found at `[SCHEME]://[HOSTNAME]/galler
 
 The file living at `content/gallery.md` specifies the front matter for the page.
 
-```json
-{
-  "title": "Gallery",
-  "description": "Gallery",
-  "type": "gallery",
-  "menu": {
-    "main": {
-      "name": "Gallery",
-      "title": "Gallery",
-      "identifier": "gallery",
-      "url": "/gallery/",
-      "weight": 105
-    }
-  }
-}
+```toml
++++
+title = "Gallery"
+description = "Art gallery"
+type = "gallery"
++++
 ```
 
-You can customize this by editing the value for `description` to give the page an appropriate description. The value of `title` controls the page’s title. I played around with changing the value of `menu.main.name` and never noticed any difference. The value of `menu.main.title` controls the label used in the navigation menu. The value of `menu.main.weight` adjusts the order of the navigation item amongst other weighted items. The value of `menu.main.identifier` I believe may be of use within other Hugo partials.
-
-If you are happy with page URL as described above, don’t touch `type` or `menu.main.url`. If you want to change the URL, this what you want to do:
-
-1. Change the values of `type` and `menu.main.url` so that they contain the same replacement value (I believe the custom would be dashed for multiple words but I am not positive).
-2. Edit the  location for the template at `layouts/gallery/single.html` by replacing `gallery` as the directory with the exact same value you replaced it with in step one. 
+You can customize this by editing the value for `description` to give the page an appropriate description. The value of `title` controls the page’s title.
 
 ## Stylesheets
 
