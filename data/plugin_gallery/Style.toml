@@ -24,7 +24,7 @@ Gallery = 'padding-top: 2rem;'
 # Sass block applied to gallery links.
 #
 Link = '''
-height: 30vh; 
+height: 20vh; 
 width: 20%; 
 flex-grow: 1;
 '''
