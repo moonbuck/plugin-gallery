@@ -27,7 +27,7 @@
   {{ with .Style.Description }}{{ template "rfs-wrap" . }}{{ end }}
 }
 
-.{{ .Style.GalleryClassName }} {
+#{{ .Style.DescriptionID }} + div {
   {{ with .Style.Gallery }}{{ template "rfs-wrap" . }}{{ end }}
   
   a {

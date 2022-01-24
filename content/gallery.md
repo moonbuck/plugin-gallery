@@ -1,7 +1,7 @@
 +++
 title = "Gallery"
 description = "Art gallery"
-type = "plugin-gallery/gallery"
+type = "gallery"
 [menu.main]
 name = 'Gallery'
 title = 'Gallery'

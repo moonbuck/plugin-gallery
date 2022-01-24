@@ -9,11 +9,6 @@ DescriptionID = 'gallery-description'
 #
 Description = ''
 
-# Class assigned to the gallery's <div>.
-# The default is (.LinkTitle | anchorize)-gallery
-#
-GalleryClassName = ''
-
 # Sass block applied to the gallery's <div>
 #
 Gallery = 'padding-top: 2rem;'

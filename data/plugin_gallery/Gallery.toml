@@ -5,9 +5,9 @@
 # parsed as markdown before display.
 Description = ''
 
-# The gallery's name. When absent, the plugin will use an anchorized
-# version of the page's .LinkTitle variable value.
-Name = ''
+# The gallery's name. 
+#
+Name = 'plugin-gallery'
 
 # Whether the gallery slide links should wrap or be 
 # constrained to a single row. This affects the container's
