@@ -19,33 +19,16 @@ Description = ''
 
 # Sass block applied to the gallery's <div>
 #
-Gallery = 'padding-top: 2rem;'
+Gallery = ''
 
 # Sass block applied to gallery links.
 #
-Link = '''
-height: 20vh; 
-width: 20%; 
-flex-grow: 1;
-'''
+Link = ''
 
 # Sass block applied to gallery images.
 #
-Img = '''
-max-height: 100%;
-min-height: 100%; 
-min-width: 100%; 
-object-fit: cover; 
-vertical-align: bottom;
-'''
+Img = ''
 
 # Sass block applied to gallery videos.
 #
-Video = '''
-margin-top: 0; 
-max-height: 100%; 
-min-height: 100%; 
-min-width: 100%; 
-object-fit: cover; 
-vertical-align: bottom;
-'''
+Video = ''
