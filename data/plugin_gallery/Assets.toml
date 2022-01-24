@@ -1,0 +1,89 @@
+# Array of slide configurations
+###############################
+
+# Each appearance of [[Slides]] defines a slide configuration 
+# in the slides array.
+
+[[Slides]]
+
+# There it was, your first slide configuration, and its empty.
+# For the plugin to be satisfied, every slide must have a valid
+# path set for either 'href' or 'src'.
+#
+# My slide configurations begin like this:
+#
+# [[Slides]]
+# Title = "American Fabric"
+# Src = "https://moondeer.blog/uploads/2021/80b124a294.jpg"
+#
+#
+# There are a ridiculous number of parameters you can set
+# individually for each slide. Here's a look at 'em:
+#
+# The URL for the slide content. This is required unless a 
+# 'src' parameter value has been provided.
+# Href = ""
+#
+# The URL for the link content. This is required unless an 
+# 'href' parameter value has been provided.
+# Src = ""
+#
+# Overrides the 'linkStyle' value (as described above) for this slide.
+# LinkStyle = ""
+#
+# The slide's title. Default is undefined.
+# Title = ""
+#
+# The slide's description. Default is undefined.
+# Description = ""
+#
+# Overrides the 'descPosition' value (as described above) 
+# for this slide.
+# DescPosition = ""
+#
+# (image, video, inline?, iframe?) The slide type. 
+# Default infers from source and I have no idea if those
+# last two are even valid.
+# Type = ""
+#
+# Overrides the 'effect' value (as described above) for this slide.
+# Effect = ""
+#
+# Overrides the 'width' value (as described above) for this slide.
+# Width = ""
+#
+# Overrides the 'height' value (as described above) for this slide.
+# Height = ""
+#
+# Overrides the 'zoomable' value (as described above) for this slide.
+# Zoomable = ""
+#
+# Overrides the 'draggable' value (as described above) for this slide.
+# Draggable = ""
+#
+# Specifies image sizes for different page layouts.
+# Sizes = ""
+#
+# Specifies a list of image files to use in different situations.
+# Srcset = ""
+#
+# Overrides the 'videoStyle' value (as described above) for this slide.
+# VideoStyle = ""
+#
+# Overrides the 'loop' value (as described above) for this slide.
+# Loop = ""
+#
+# Overrides the 'autoplay' value (as described above) for this slide.
+# Autoplay = ""
+#
+# Overrides the 'preload' value (as described above) for this slide.
+# Preload = ""
+#
+# Specifies an alternate text for an image.
+# Alt = ""
+#
+# Overrides the 'imgStyle' value (as described above) for this slide.
+# ImgStyle = ""
+#
+# Overrides the 'photoWidth' value (as described above) for this slide.
+# PhotoWidth = ""

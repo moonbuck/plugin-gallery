@@ -1,30 +1,39 @@
-{{- define "main" }}
-<section id="wrapper">
+{{ define "main" -}}
 
-{{- $gallery_data := (site.Data.plugin_gallery_data | default site.Data.plugin_gallery.gallery_data) | default site.Params.gallery_data }}
-{{- if (and $gallery_data (not ($gallery_data | reflect.IsMap))) }}
-{{- with transform.Unmarshal $gallery_data }}
-{{- $gallery_data = . }}
-{{- end }}
-{{- end }}
-
-{{- if (and ($gallery_data | reflect.IsMap) (isset $gallery_data "slides")) }}
-
-
-{{- with $gallery_data }}
-
-{{- with .description }}
-<div id="gallery-description">{{ . | markdownify }}</div>
-{{- end }}
-
-{{- $name := .name | default $.LinkTitle | anchorize }}
-
-{{- partial "gallery.html" (dict "gallery" $name "slide_data" .slides "wrap" .wrap "div_style" .div_style "div_class" .div_class "link_class" .link_class "link_style" .link_style "img_class" .img_class "img_style" .img_style "video_class" .video_class "video_style" .video_style "photo_width" .photo_width "desc_position" .desc_position "effect" .effect "zoomable" .zoomable "draggable" .draggable "loop" .loop "autoplay" .autoplay "preload" .preload "width" .width "height" .height) }}
+  {{- if not (.Scratch.Get "plugin-gallery.Parameters") -}}
+    {{- partial "plugin-gallery/load-parameters.html" . -}}
+  {{- end -}}
   
-{{- end }}
-  
-{{- end }}
+  {{- with .Scratch.Get "plugin-gallery.Parameters" -}}
+   
+    {{ if .Gallery.Description -}}
+<div id="{{ .Style.DescriptionID }}">{{ .Gallery.Description | markdownify }}</div>
+    {{- end }}
 
-</section>
+    {{- $Parameters := dict 
+      "gallery" .Gallery.Name
+      "slide_data" .Assets.Slides
+      "wrap" .Gallery.Wrap
+      "div_class" .Style.GalleryClassName
+      "link_class" .Style.LinkClassName
+      "img_class" .Style.ImgClassName
+      "video_class" .Style.VideoClassName
+      "photo_width" .Gallery.PhotoWidth
+      "desc_position" .Gallery.DescPosition
+      "effect" .Gallery.Effect
+      "zoomable" .Gallery.Zoomable
+      "draggable" .Gallery.Draggable
+      "loop" .Gallery.Loop
+      "autoplay" .Gallery.Autoplay
+      "preload" .Gallery.Preload
+      "width" .Gallery.Width
+      "height" .Gallery.Height
+      -}}
+    
+    {{- if templates.Exists "partials/gallery.html" -}}
+      {{ partial "gallery.html" $Parameters }}
+    {{- end -}}
+    
+  {{- end -}} {{/* with .Scratch.Get "plugin-gallery.Parameters" */}}
 
-{{- end }}
+{{- end }} {{/* define "main" */}}
