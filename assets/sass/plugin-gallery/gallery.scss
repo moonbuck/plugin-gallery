@@ -23,6 +23,9 @@
 
 {{ with .Scratch.Get "plugin-gallery.Parameters" }}
 
+#{{ .Style.HeaderID }} {
+  {{ with .Style.Header }}{{ template "rfs-wrap" . }}{{ end }}
+}
 #{{ .Style.DescriptionID }} {
   {{ with .Style.Description }}{{ template "rfs-wrap" . }}{{ end }}
 }

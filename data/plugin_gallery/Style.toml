@@ -1,6 +1,14 @@
 # Parameters for styling the gallery page
 #########################################
 
+# The ID assigned to the header above the description.
+#
+HeaderID = 'gallery-header'
+
+# Sass block applied to the header above the description.
+#
+Header = ''
+
 # The ID assigned to the description above the gallery.
 #
 DescriptionID = 'gallery-description'

@@ -1,8 +1,14 @@
 # Gallery description and parameters passed through to plugin-lightbox
 ######################################################################
 
+# A header to display above the description and gallery. This will be
+# parsed as markdown before display.
+#
+Header = ''
+
 # A description to display just above the gallery. This will be
 # parsed as markdown before display.
+#
 Description = ''
 
 # The gallery's name. 

@@ -5,9 +5,13 @@
   {{- end -}}
   
   {{- with .Scratch.Get "plugin-gallery.Parameters" -}}
+  
+    {{ if .Gallery.Header -}}
+<h1 id="{{ .Style.HeaderID }}">{{ .Gallery.Header | chomp | markdownify }}</h1>
+    {{- end }}
    
     {{ if .Gallery.Description -}}
-<div id="{{ .Style.DescriptionID }}">{{ .Gallery.Description | markdownify }}</div>
+<div id="{{ .Style.DescriptionID }}">{{ .Gallery.Description | chomp | markdownify }}</div>
     {{- end }}
 
     {{- $Parameters := dict 
@@ -26,8 +30,9 @@
       "height" .Gallery.Height
       -}}
     
-    {{- if templates.Exists "partials/gallery.html" -}}
-      {{ partial "gallery.html" $Parameters }}
+    {{- if templates.Exists (path.Join "partials" 
+                                       .Config.GalleryPartial) -}}
+      {{ partial .Config.GalleryPartial $Parameters }}
     {{- end -}}
     
   {{- end -}} {{/* with .Scratch.Get "plugin-gallery.Parameters" */}}
