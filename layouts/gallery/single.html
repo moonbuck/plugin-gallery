@@ -15,23 +15,23 @@
     {{- end }}
 
     {{- $Parameters := dict 
-      "gallery" .Gallery.Name
-      "slide_data" .Assets.Slides
-      "wrap" .Gallery.Wrap
-      "photo_width" .Gallery.PhotoWidth
-      "desc_position" .Gallery.DescPosition
-      "effect" .Gallery.Effect
-      "zoomable" .Gallery.Zoomable
-      "draggable" .Gallery.Draggable
-      "loop" .Gallery.Loop
-      "autoplay" .Gallery.Autoplay
-      "preload" .Gallery.Preload
-      "width" .Gallery.Width
-      "height" .Gallery.Height
-      "div_style" ";"
-      "link_style" ";"
-      "img_style" ";"
-      "video_style" ";"
+      "Gallery" .Gallery.Name
+      "Slides" .Assets.Slides
+      "Wrap" .Gallery.Wrap
+      "PhotoWidth" .Gallery.PhotoWidth
+      "DescPosition" .Gallery.DescPosition
+      "Effect" .Gallery.Effect
+      "Zoomable" .Gallery.Zoomable
+      "Draggable" .Gallery.Draggable
+      "Loop" .Gallery.Loop
+      "Autoplay" .Gallery.Autoplay
+      "Preload" .Gallery.Preload
+      "Width" .Gallery.Width
+      "Height" .Gallery.Height
+      "GalleryStyle" ";"
+      "LinkStyle" ";"
+      "ImgStyle" ";"
+      "VideoStyle" ";"
       -}}
     
     {{- if templates.Exists (path.Join "partials" 

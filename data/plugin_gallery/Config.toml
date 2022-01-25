@@ -3,7 +3,7 @@
 
 # Theme version, printed to HTML comment when the plugin loads.
 #
-Version = '6.0.3'
+Version = '6.0.4'
 
 # Whether to print HTML comments for debugging purposes.
 #
@@ -24,4 +24,4 @@ SassOutput = 'compact'
 # The location of the gallery partial (default provided by plugin-lightbox)
 # relative to the partials directory.
 #
-GalleryPartial = 'gallery.html'
+GalleryPartial = 'plugin-lightbox/gallery.html'
