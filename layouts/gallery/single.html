@@ -15,6 +15,7 @@
     {{- end }}
 
     {{- $Parameters := dict 
+      "Page" $
       "Gallery" .Gallery.Name
       "Slides" .Assets.Slides
       "Wrap" .Gallery.Wrap
@@ -34,9 +35,8 @@
       "VideoStyle" ";"
       -}}
     
-    {{- if templates.Exists (path.Join "partials" 
-                                       .Config.GalleryPartial) -}}
-      {{ partial .Config.GalleryPartial $Parameters }}
+    {{- if templates.Exists "partials/plugin-lightbox/gallery.html" -}}
+      {{ partial "plugin-lightbox/gallery.html" $Parameters }}
     {{- end -}}
     
   {{- end -}} {{/* with .Scratch.Get "plugin-gallery.Parameters" */}}
