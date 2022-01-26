@@ -29,7 +29,9 @@
     {{- if .Config.Fingerprint }}{{ $style = $style | fingerprint }}{{ end -}}
   
     {{- print "\n" -}}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
+<link rel="stylesheet" href="{{ $style.Permalink }}"
+{{- if .Config.Fingerprint }} integrity="{{ $style.Data.Integrity }}"{{ end -}}
+>
   
   {{- end -}}
 
