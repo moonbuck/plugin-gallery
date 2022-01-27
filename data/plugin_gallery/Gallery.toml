@@ -15,52 +15,46 @@ Description = ''
 #
 Name = 'plugin-gallery'
 
-# Whether the gallery slide links should wrap or be 
-# constrained to a single row. This affects the container's
-# flex-wrap value.
-#
-Wrap = true
-
 # Default description position for all slides.
 #
-DescPosition = ''
+# DescPosition = ''
 
 # Default effect to set for slide transitions. Valid values are
 # 'zoom', 'fade', and 'none'. GLightbox defaults to `zoom`.
 #
-Effect = ''
+# Effect = ''
 
 # Default width to apply to all slides.
 #
-Width = ''
+# Width = ''
 
 # Default height to apply to all slides.
 #
-Height = ''
+# Height = ''
 
 # Whether slides shall be zoomable by default.
 # Glightbox defaults to true.
 #
-Zoomable = ''
+# Zoomable = 'true'
 
 # Whether slides shall be draggable by default.
 # Glightbox defaults to true.
 #
-Draggable = ''
+# Draggable = 'true'
 
 # Whether videos used as link content should loop by default.
 #
-Loop = true
+# Loop = true
 
 # Whether videos used as link content should autoplay by default.
 #
-Autoplay = true
+# Autoplay = true
 
 # Whether videos used as link content should preload by default.
 # Valid values are 'auto', 'metadata', and 'none'. Ignored when
 # autoplay is true.
 #
-Preload = ''
+# Preload = ''
 
 # Default pixel width for fetching thumbnail images 
 # via https://micro.blog/photos/ API.
