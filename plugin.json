@@ -1,5 +1,5 @@
 {
-    "version": "6.0.6",
+    "version": "6.0.7",
     "title": "Moondeer's Gallery",
     "description": "Leverages plugin-lightbox to create a a gallery page.",
     "includes": [ "plugin-gallery/injection.html" ]

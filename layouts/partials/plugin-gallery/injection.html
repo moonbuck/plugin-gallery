@@ -16,6 +16,23 @@
     {{- $version := .Config.Version -}}
     {{ printf "\n<!-- gallery v%s (built on %s) -->\n" $version $time | safeHTML }}
     
+    {{- $source_dir := "sass/plugin-gallery/" -}}
+    {{- $template_name := "gallery.scss" -}}
+    {{- $source := path.Join $source_dir $template_name -}}
+    {{- $target := path.Join "assets" $source -}}
+    {{- $style := resources.Get $source | resources.ExecuteAsTemplate $target $ -}} 
+  
+    {{- $target = $target | replaceRE "sass|scss" "css" -}}
+    {{- $options := dict "targetPath" $target  "outputStyle" .Config.SassOutput -}}
+    {{- $style = $style | toCSS $options -}}
+  
+    {{- if .Config.Fingerprint }}{{ $style = $style | fingerprint }}{{ end -}}
+  
+    {{- print "\n" -}}
+<link rel="stylesheet" href="{{ $style.Permalink }}"
+{{- if .Config.Fingerprint }} integrity="{{ $style.Data.Integrity }}"{{ end -}}
+>
+  
   {{- end -}}
 
 {{- end }}
