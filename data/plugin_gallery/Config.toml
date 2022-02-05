@@ -20,8 +20,3 @@ Fingerprint = true
 # Valid options are nested, expanded, compact and compressed
 #
 SassOutput = 'compact'
-
-# The location of the gallery partial (default provided by plugin-lightbox)
-# relative to the partials directory.
-#
-GalleryPartial = 'plugin-lightbox/gallery.html'
