@@ -8,7 +8,7 @@
   {{- with (.Scratch.Get "plugin-gallery.Parameters") -}}
   
     {{- if .Config.DebugPrint -}}
-      {{- printf "\n<!--\nplugin-gallery.Parameters:\n%s\n-->" (jsonify .) | safeHTML -}}
+      {{- printf "\n<!--\nplugin-gallery.Parameters:\n%s\n-->" (. | jsonify (dict "prefix" " " "indent" "  ")) | safeHTML -}}
     {{- end -}}
   
     {{- /* Insert the plugin version and build time */ -}}
