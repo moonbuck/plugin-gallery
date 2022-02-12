@@ -1,6 +1,6 @@
 {
     "version": "6.0.7",
     "title": "Moondeer's Gallery",
-    "description": "Leverages plugin-lightbox to create a a gallery page (requires my lightbox plugin be installed). An updated README is on the way. See the documented configuration files in the plugin's data directory for plugin parameters and feel free to holler at me with any questions.",
+    "description": "Leverages plugin-lightbox to create a a gallery page (requires my lightbox plugin be installed). Details on configuring plugin parameters may be found <a href='https://moondeer.blog/2022/02/12/plugingallery-a-readme.html'>here</a>",
     "includes": [ "plugin-gallery/injection.html" ]
   }
